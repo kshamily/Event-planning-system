@@ -1,0 +1,48 @@
+﻿@using EEPS.DAL.Data;
+@using Kendo.Mvc.UI.Fluent;
+@{
+    ViewBag.Title = "Events";
+}
+
+@(Html.Kendo().Grid<EventModel>()
+    .Name("Events")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Name);
+        columns.Bound(p => p.Venue);
+        columns.Bound(p => p.EventDateTime);
+        columns.Bound(p => p.TotalExpectedGuest);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.PopUp))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .HtmlAttributes(new { style = "height:550px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Events(events => events.Error("error_handler"))
+        .Model(model => model.Id(p => p.EventId))
+        .Create(update => update.Action("EditingPopup_Create", "Events"))
+        .Read(read => read.Action("EditingPopup_Read", "Events"))
+        .Update(update => update.Action("EditingPopup_Update", "Events"))
+        .Destroy(update => update.Action("EditingPopup_Destroy", "Events"))
+    )
+)
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>

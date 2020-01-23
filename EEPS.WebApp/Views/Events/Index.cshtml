@@ -1,0 +1,112 @@
+﻿@using EEPS.DAL.Data;
+@using Kendo.Mvc.UI.Fluent;
+@{
+    ViewBag.Title = "Events";
+}
+
+<br />
+<div style="">
+    @(Html.Kendo().Grid<EventModel>
+    ()
+    .Name("Events")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.CustomerName).Title("Customer Name");
+        columns.Bound(p => p.EventName).Title("Event Name");
+        columns.Bound(p => p.Venue).Title("Event Venue");
+        columns.Bound(p => p.EventDateTime).Title("Event Date Time").Format("{0:MM/dd/yyyy HH:mm}");
+        columns.Bound(p => p.TotalExpectedGuest).Title("Total Expected Guest");
+        columns.Command(command =>
+                {
+            command.Edit().UpdateText("Save");
+            command.Destroy();
+        }).Width(250);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.PopUp).Window(w => w.Title("Event")).TemplateName("Event"))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .Groupable()
+    .HtmlAttributes(new { style = "height:500px;" })
+    .DataSource(dataSource => dataSource
+    .Ajax()
+    .PageSize(20)
+    .Events(events => events.Error("error_handler").Sync("sync_handler").Change("change_handler"))
+    .Model(model => model.Id(p => p.EventId))
+    .Create(update => update.Action("Event_Create", "Events"))
+    .Read(read => read.Action("Event_Read", "Events"))
+    .Update(update => update.Action("Event_Update", "Events"))
+    .Destroy(update => update.Action("Event_Delete", "Events"))
+    )
+    )
+</div>
+<script type="text/javascript">
+    function change_handler(e) {
+        var filepath = $("#FilePath").val();
+        var eventid = $("#EventId").val();
+        if (eventid != 0 && filepath != undefined) {
+                $.ajax({
+                    url: '@Url.Action("EventUpdateDocument")',
+                    type: 'POST',
+                    data: {
+                        filepath: filepath,
+                        eventid: eventid
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                    },
+                    error: function (request, error) {
+
+                    }
+                });
+            }
+    }
+    function sync_handler(e) {
+        this.read();
+    }
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+</script>
+
+<script>
+    function onComplete(e) {
+    }
+
+    function onError(e) {
+        console.log("onError :: " + getFileInfo(e));
+    }
+    function onSuccess(e) {
+        $("#FilePath").val(getFileName(e));
+    }
+    function getFileInfo(e) {
+        return $.map(e.files, function (file) {
+            var info = file.name;
+
+            // File size is not available in all browsers
+            if (file.size > 0) {
+                info += " (" + Math.ceil(file.size / 1024) + " KB)";
+            }
+            return info;
+        }).join(", ");
+    }
+    function getFileName(e) {
+        return $.map(e.files, function (file) {
+            var info = file.name;
+            return info;
+        }).join(", ");
+    }
+</script>

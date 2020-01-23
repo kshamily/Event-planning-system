@@ -1,0 +1,103 @@
+﻿@model EEPS.DAL.Data.EventModel
+
+<div class="form-horizontal col-lg-12">
+    <div>
+        <div>
+            @Html.HiddenFor(model => model.EventId, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.HiddenFor(model => model.FilePath, new { htmlAttributes = new { @class = "k-textbox" } })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.Label("Customer", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.DropDownListFor(model => model.CustomerID, (List<SelectListItem>)Session["CustomersSelectList"], new { @class = "k-widget k-dropdown k-dropdown-wrap k-state-default" })
+            @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.Label("Event Name", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.EventName, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.ValidationMessageFor(model => model.EventName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Venue, htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.Venue, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.ValidationMessageFor(model => model.Venue, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EventDateTime, htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.EventDateTime, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.ValidationMessageFor(model => model.EventDateTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Total Expected Guest", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.TotalExpectedGuest, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.ValidationMessageFor(model => model.TotalExpectedGuest, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Table Size", htmlAttributes: new { @class = "control-label" })
+        <div>
+            <select class="k-widget k-dropdown k-dropdown-wrap k-state-default" data-val="true" data-val-number="The field table size must be a number." data-val-required="The table size field is required."
+                    id="TableSize"
+                    name="TableSize"
+                    data-bind="value:TableSize">
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+            </select>
+
+            @Html.ValidationMessageFor(model => model.TableSize, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Percent Of Empty Seats", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.PercentOfEmptySeats, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.ValidationMessageFor(model => model.PercentOfEmptySeats, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("File Path", htmlAttributes: new { @class = "control-label" })
+        <div>
+            <div class="demo-section k-content">
+                @(Html.Kendo().Upload()
+                    .Name("files")
+                    .Multiple(false)
+                    .Async(a => a
+                        .Save("Async_Save", "Events")
+                        .Remove("Async_Remove", "Events")
+                        .AutoUpload(true)
+                    )
+                    .Validation(validation => validation.AllowedExtensions(new string[] { ".xls", ".xlsx", ".csv" }))
+                    .Events(events => events
+                        .Complete("onComplete")
+                        .Error("onError")
+                        .Success("onSuccess")
+                        )
+                )
+            </div>
+        </div>
+    </div>
+    <br />
+</div>
+

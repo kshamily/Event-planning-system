@@ -1,0 +1,55 @@
+﻿@using EEPS.DAL.Data;
+@using Kendo.Mvc.UI.Fluent;
+@{
+    ViewBag.Title = "Customers";
+}
+
+<br />
+<div style="">
+    @(Html.Kendo().Grid<CustomerModel>()
+        .Name("Customers")
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.Name).Title("Name");
+            columns.Bound(p => p.Email).Title("Email");
+            columns.Bound(p => p.PhoneNumber).Title("Phone number").Format("{0:MM/dd/yyyy HH:mm}");
+            columns.Bound(p => p.IsActive).Title("Is Active");
+            columns.Command(command => { command.Edit().UpdateText("Save"); command.Destroy(); }).Width(250);
+        })
+        .ToolBar(toolbar => toolbar.Create())
+        .Editable(editable => editable.Mode(GridEditMode.PopUp).Window(w => w.Title("Customer")).TemplateName("Customer"))
+        .Pageable()
+        .Sortable()
+        .Scrollable()
+        .Filterable()
+        .Groupable()
+        .HtmlAttributes(new { style = "height:500px;" })
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(20)
+            .Events(events => events.Error("error_handler"))
+            .Model(model => model.Id(p => p.CustomerId))
+            .Create(update => update.Action("Customer_Create", "Customers"))
+            .Read(read => read.Action("Customer_Read", "Customers"))
+            .Update(update => update.Action("Customer_Update", "Customers"))
+            .Destroy(update => update.Action("Customer_Delete", "Customers"))
+        )
+    )
+</div>
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+</script>

@@ -1,0 +1,44 @@
+D:\Projects\Project 2\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.deps.json
+D:\Projects\Project 2\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.runtimeconfig.json
+D:\Projects\Project 2\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.runtimeconfig.dev.json
+D:\Projects\Project 2\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.dll
+D:\Projects\Project 2\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.pdb
+D:\Projects\Project 2\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.csprojAssemblyReference.cache
+D:\Projects\Project 2\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.csproj.CoreCompileInputs.cache
+D:\Projects\Project 2\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.RazorAssemblyInfo.cache
+D:\Projects\Project 2\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.RazorAssemblyInfo.cs
+D:\Projects\Project 2\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.AssemblyInfoInputs.cache
+D:\Projects\Project 2\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.AssemblyInfo.cs
+D:\Projects\Project 2\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.RazorTargetAssemblyInfo.cache
+D:\Projects\Project 2\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.dll
+D:\Projects\Project 2\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.pdb
+D:\Projects\EEPSProject\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.deps.json
+D:\Projects\EEPSProject\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.runtimeconfig.json
+D:\Projects\EEPSProject\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.runtimeconfig.dev.json
+D:\Projects\EEPSProject\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.dll
+D:\Projects\EEPSProject\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.pdb
+D:\Projects\EEPSProject\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.csproj.CoreCompileInputs.cache
+D:\Projects\EEPSProject\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.RazorAssemblyInfo.cache
+D:\Projects\EEPSProject\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.RazorAssemblyInfo.cs
+D:\Projects\EEPSProject\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.AssemblyInfoInputs.cache
+D:\Projects\EEPSProject\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.AssemblyInfo.cs
+D:\Projects\EEPSProject\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.RazorTargetAssemblyInfo.cache
+D:\Projects\EEPSProject\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.dll
+D:\Projects\EEPSProject\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.pdb
+D:\Projects\EEPSProject\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.xml
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.deps.json
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.runtimeconfig.json
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.runtimeconfig.dev.json
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.dll
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.pdb
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\bin\Debug\netcoreapp2.1\EEPS.API.xml
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.csprojAssemblyReference.cache
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.csproj.CoreCompileInputs.cache
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.RazorAssemblyInfo.cache
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.RazorAssemblyInfo.cs
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.AssemblyInfoInputs.cache
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.AssemblyInfo.cs
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.RazorTargetAssemblyInfo.cache
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.dll
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.pdb
+D:\Projects\EEPSProject\EEPS\EEPS.API\obj\Debug\netcoreapp2.1\EEPS.API.csprojAssemblyReference.cache

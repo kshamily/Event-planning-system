@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - EEPS</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!--This bundle was moved by the Telerik VS Extensions for compatibility reasons-->
+    @Scripts.Render("~/bundles/jquery")
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="~/Content/kendo.bootstrap-v4.min.css" rel="stylesheet" />
+
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://kendo.cdn.telerik.com/2019.2.619/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.2.619/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.2.619/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.2.619/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("EEPS", "Index", "Events", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li @(@ViewBag.Title == "Events" ? "class=active" : "")>@Html.ActionLink("Events", "Index", "Events")</li>
+                    <li @(@ViewBag.Title == "Customers" ? "class=active" : "")>@Html.ActionLink("Customers", "Index", "Customers")</li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li @(@ViewBag.Title == "Users" ? "class=active" : "")>@Html.ActionLink("Users", "Index", "Users")</li>
+                    }
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li><a href="#">  Welcome @User.Identity.Name</a></li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/signin.css" rel="stylesheet" />
+
+
+<div class="text-center form-signin">
+
+    @using (Html.BeginForm())
+    {
+
+
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="txtUserName" class="sr-only">Email address</label>
+        <input type="text" id="txtUserName" name="userName" class="form-control" placeholder="Username" required autofocus>
+        <br />
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="rememberme"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    }
+
+
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var myKeyVals = { username: "admin", password: "admin@123" }
+
+            var saveData = $.ajax({
+                type: 'POST',
+                url: "https://localhost:44338/api/Authentication",
+                data: myKeyVals,
+                dataType: "text",
+                success: function (resultData) { alert("Save Complete") }
+            });
+        });
+
+    </script>
+}

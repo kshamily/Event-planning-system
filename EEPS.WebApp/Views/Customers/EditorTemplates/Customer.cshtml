@@ -1,0 +1,42 @@
+﻿@model EEPS.DAL.Data.CustomerModel
+
+<div class="form-horizontal col-lg-12">
+    <div>
+        <div>
+            @Html.HiddenFor(model => model.CustomerId, new { htmlAttributes = new { @class = "k-textbox" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Name", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Phone Number", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Is Active", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "k-textbox" } })
+            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+</div>

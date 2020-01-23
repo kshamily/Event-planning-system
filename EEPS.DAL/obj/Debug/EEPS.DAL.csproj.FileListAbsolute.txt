@@ -1,0 +1,11 @@
+D:\Projects\EEPSProject\EEPS\EEPS.DAL\bin\Debug\EEPS.DAL.dll
+D:\Projects\EEPSProject\EEPS\EEPS.DAL\bin\Debug\EEPS.DAL.pdb
+D:\Projects\EEPSProject\EEPS\EEPS.DAL\obj\Debug\EEPS.DAL.csproj.CoreCompileInputs.cache
+D:\Projects\EEPSProject\EEPS\EEPS.DAL\obj\Debug\EEPS.DAL.dll
+D:\Projects\EEPSProject\EEPS\EEPS.DAL\obj\Debug\EEPS.DAL.pdb
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.DAL\bin\Debug\EEPS.DAL.dll
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.DAL\bin\Debug\EEPS.DAL.pdb
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.DAL\obj\Debug\EEPS.DAL.csprojAssemblyReference.cache
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.DAL\obj\Debug\EEPS.DAL.csproj.CoreCompileInputs.cache
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.DAL\obj\Debug\EEPS.DAL.dll
+C:\Users\shamily\Source\Repos\EEPS\EEPS\EEPS.DAL\obj\Debug\EEPS.DAL.pdb
