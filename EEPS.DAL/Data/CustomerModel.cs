@@ -8,6 +8,7 @@ namespace EEPS.DAL.Data
     public class CustomerModel
     {
         public int CustomerId { get; set; }
+//This is the new code by chay
         public string Email { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
